@@ -1,52 +1,84 @@
 <!DOCTYPE html>
 <head>
-	<title>
-		Famiglia
-	</title>
+	<title> Famiglia </title>
 	<link rel="stylesheet" href="include/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="include/bootstrap-3.3.5-dist/js/bootstrap.min.js"/>
 	<link rel="stylesheet" href="include/jquery-1.11.3.min.js"/>
 </head>
 <body>
 	<div class="container-fluid">
-	<div class="row">
-		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			<h1>Famiglia</h1>
-			<small>A way for family to connect online securely!</small>
+		<div>
+			<nav role="navigation" class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">Famiglia</a>
+				</div>
+				<!-- Collection of nav links, forms, and other content for toggling -->
+				<div id="navbarCollapse" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li class="dropdown">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">Profile <b class="caret"></b></a>
+							<ul role="menu" class="dropdown-menu">
+								<li>
+									<a href="profile.html">View Profile</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="mywall.html">My Wall</a>
+						</li>
+
+						<li>
+							<a data-toggle="dropdown" class="dropdown-toggle" href="#">Family <b class="caret"></b></a>
+							<ul role="menu" class="dropdown-menu">
+								<li>
+									<a href="family_members.html">Family Members</a>
+								</li>
+								<li>
+									<a href="search.html">Search</a>
+								</li>
+								<li>
+									<a href="familytree.html">View Family Tree</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="messages.html">Messages</a>
+						</li>
+						<li>
+							<a href="gallery.html">Gallery</a>
+						</li>
+						<li>
+							<a href="videos.html">Videos</a>
+						</li>
+						<li>
+							<a href="events.html">Events</a>
+						</li>
+						<li>
+							<a href="logout.html">Logout</a>
+						</li>
+					</ul>
+					<form role="search" class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" placeholder="Search" class="form-control">
+						</div>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#">Welcome! Random User</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
 		</div>
-		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			Welcome! Vipin Ashodhiya
-		</div>
-	</div>
-	<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Famiglia</a>
-			</div>
-			<div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html" target="_blank">Home</a></li>
-                    <li><a href="profile.html" target="_blank">Profile</a></li>
-                    <li><a href="profile.html" target="_blank">View Profile</a></li>
-                    <li><a href="mywall.html" target="_blank">My Wall</a></li>
-                    <li><a href="family.html" target="_blank">Family</a></li>
-                    <li><a href="family_members.html" target="_blank">Family Members</a></li>
-                    <li><a href="search.html" target="_blank">Search</a></li>
-                    <li><a href="familytree.html" target="_blank">View Family Tree</a></li>
-                    <li><a href="messages.html" target="_blank">Messages</a></li>
-                    <li><a href="gallery.html" target="_blank">Gallery</a></li>
-                    <li><a href="videos.html" target="_blank">Videos</a></li>
-                    <li><a href="events.html" target="_blank">Events</a></li>
-                    <li><a href="logout.html" target="_blank">Logout</a></li>
-                </ul>
-            </div>
-		</div>
-	</nav>
 	</div>
 </body>
