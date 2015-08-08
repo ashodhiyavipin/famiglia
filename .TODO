@@ -1,0 +1,12 @@
+#######################################
+TODO file for famiglia
+#######################################
+##How to read this file##
+The file is simple to read the first line contains the name of the file
+and the next line after the header contains a list of things to be done on the file.
+
+###index.php###
+1. Have a pattern in the background as img and repeat infinitely.
+2. redesign the signup form using bootstrap properties.
+
+#######################################
