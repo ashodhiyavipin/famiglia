@@ -78,9 +78,8 @@ $_SESSION[setid] = rand();
     <!-- ################################################################################################ -->
     <div id="homepage" class="clear">
       <div class="two_third first">
-        <div class="push30"><img src="images/snal/six_figure_mentors_mission.jpg" alt="" width="1200" height="400"></div>
         <!-- #### -->
-        <div class="divider2"></div>
+        
         <!-- #### -->
         <div class="two_third first">
           <article class="push30 clear">
