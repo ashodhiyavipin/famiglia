@@ -8,6 +8,15 @@ and the next line after the header contains a list of things to be done on the f
 ###index.php###
 1. Have a pattern in the background as img and repeat infinitely.
 2. redesign the signup form using bootstrap properties.
+3. add new fields to the signup form 1. username 2. mobile 3. city.
+4. if possible add a way for them select city by auto suggest using php mysql and ajax.
+
+#######################################
+
+###header.php###
+1. change the friends menu to family.
+2. remove the search option in sub menu and change it to view family.
+3. delete view friends request.
 
 #######################################
 
@@ -24,3 +33,46 @@ and the next line after the header contains a list of things to be done on the f
 2. recode the mysql statement to show only events from a users family.
 ########################################
 
+###profile.php###
+1. redesign how the profile information is displayed to the user.
+2. redesign how friends are displayed below the profile information.
+########################################
+
+###changpwd.php###
+1. get rid of the ampersand displayed at the end just above the footer.
+2. merge this file contents into profile.php
+3. redesign how information is displayed
+########################################
+
+###viewmessage.php###
+1. redesign the box used to display the messages.
+2. use ajax jquery mysql and php to fetch and display messages from mysql.
+########################################
+
+###fancycomposemessage.php###
+1. make it float on top of viewmessage.php like a pop up box. shadow box from jquery
+2. make the auto suggestion work from mysql
+3. if possible check if compose message can be redirected to chat box.
+########################################
+
+###album.php###
+1. redesign the form used for creating new albums by using bootstrap.
+2. uploadphotos.php?albumid=0 redesign the form with bootstrap.
+########################################
+
+###wallpostvideos.php###
+1. make video uploads work.
+########################################
+
+###group.php###
+1. redesign create group form.
+########################################
+
+###viewgroups.php###
+1. redesign the way groups are listed.
+2. make it bootstrap compatible.
+########################################
+
+###events.php###
+1. check to see if possible to make the form appear by default.
+########################################
