@@ -12,25 +12,25 @@ if($_POST[setid]==$_SESSION[setid])
 {
 	if (isset($_POST["signup"]))
 	{
-		$sqllogin = mysqli_query($con,"SELECT * FROM profile where  emailid='$_POST[emailid]' ");
+		$sqllogin = mysqli_query($con,"SELECT * FROM profile where emailid='$_POST[emailid]' ");
 		if(mysqli_num_rows($sqllogin) == 0)
 		{
 			$sql="INSERT INTO profile(firstname,lastname,emailid,password,dob,gender)
-			  VALUES('$_POST[firstname]','$_POST[lastname]','$_POST[emailid]','$_POST[password]','$_POST[dob]','$_POST[gender]')";		
+			  VALUES('$_POST[firstname]','$_POST[lastname]','$_POST[emailid]','$_POST[password]','$_POST[dob]','$_POST[gender]')";
 			  if (!mysqli_query($con,$sql))
 			  {
 			  die('Error: ' . mysqli_error($con));
 			  }
 			  else
 			  {
-			$msg ="<br> Registered successfully...";
+			   $msg ="<br> Registered successfully...";
 			  }
 		}
 		else
 		{
 ?>
 		<script type="application/javascript">
-			alert("This Email ID already exist in our database..");
+			alert("This Email ID or username already exist in our database..");
 		</script>
 <?php
 		}
@@ -66,75 +66,78 @@ if(isset($_POST["btnresetpassword"]))
 	}
 	else
 	{
-$msgupdpass = "<br>Password Updated successfully..";		
+$msgupdpass = "<br>Password Updated successfully..";
 	}
 }
 include("header.php");
-$_SESSION[setid] = rand();		
+$_SESSION[setid] = rand();
 ?>
 <!-- content -->
 <div class="wrapper row3">
-  <div id="container">
-    <!-- ################################################################################################ -->
-    <div id="homepage" class="clear">
-      <div class="two_third first">
-        <!-- #### -->
-        
-        <!-- #### -->
-        <div class="two_third first">
-          <article class="push30 clear">
-            <h2 class="nospace font-medium">Registration</h2>
-            <p>
-<?php
+<div id="container-fluid">
+	<!-- ################################################################################################ -->
+	<?php
 if(strlen($msg) == 31)
 {
 	echo "<h2>Registered successfully...</h2>";
 }
 else
-{
-?>
-
-            <form name="indexform" method="post" action="" class="rnd5"  onsubmit="return validate()"  >
-            <input type="hidden" name="setid" value="<?php echo $_SESSION[setid]; ?>">
-                  <label class="one_third first" for="author">Firstname:</label> <input name=firstname type=text />
-               <label class="one_third first" for="author">Lastname:</label> <input type=text name=lastname />
-               <label class="one_third first" for="author">email id: </label><input type=text name=emailid />
-               <label class="one_third first" for="author">password:</label> <input type=password name="password" />
-               <label class="one_third first" for="author">re-enter password:</label> <input type=password name=confirmpassword />
-<?php
-               $tomorrow = mktime(0,0,0,date("m"),date("d"),date("Y")-18);
-?>
-               <label class="one_third first" for="author">DOB: <input type="date" name="dob"  /></label>
-               <br>
-     <table >
-     <tr><td>gender:</td>
-     <td>    female</td>  <td>  <input type=radio name=gender value="Female" />  </td>
-      <td> male</td>  <td><input type=radio name=gender value="Male" /></td>
-     </tr>
-     </table>
-     
-    <label class="one_third first" for="author"><input name=signup type=submit value="Register"  class="button small gradient red" /></label>
-
-  </form>   
-
+{ ?>
+	<div class="col-xs-6">
+	<form name="indexform" method="post" action="" onsubmit="return validate()">
+		<div class="row">
+			<div class="col-xs-12">
+			<label class="lead">Your name</label><input type="text" class="form-control" name="firstname" placeholder="Your first name e.g. John"/>
+			</div>
+			<div class="col-xs-12">
+			<label class="lead">Your family name</label><input type="text" class="form-control" name="lastname" placeholder="Your family name or last name e.g. Doe" />
+			</div>
+			<div class="col-xs-12">
+			<label class="lead">Your Email</label><input type="email" class="form-control" name="emailid" placeholder="Your email e.g. johndoe@example.com" />
+			</div>
+			<div class="col-xs-12">
+			<label class="lead">Choose your password</label><input type="password" class="form-control" name="password" placeholder="Choose a password" />
+			</div>
+			<div class="col-xs-12">
+			<label class="lead">Please confirm password</label><input type="password" class="form-control" name="confirmpassword" placeholder="Confirm your password" />
+			<div class="col-xs-12">
+			<?php $tomorrow = mktime(0,0,0,date("m"),date("d"),date("Y")-18); ?>
+			<label class="lead">Your birthdate</label><input type="date" class="form-control" name="dob" />
+			</div>
+			<div class="col-xs-4">
+			<label class="lead">Gender</label>
+			</div>
+			<div class="col-xs-4">
+			<label>Male</label><input type="radio" name="gender" value="Male" />
+			</div>
+			<div class="col-xs-4">
+			<label>Female</label><input type="radio" name="gender" value="Female" />
+			</div>
+			<div class="col-xs-12">
+			<input type="submit" value="Signup!" name="signup" class="btn btn-primary btn-lg btn-block"/>
+			</div>
+		</div>
+		</div>
+	</form>
+	</div>
+</div>
 <?php
 }
 ?>
-            </p>
-          
-          </article>
-        </div>
-        <!-- #### -->
-        <div class="clear"></div>
-      </div>
-      <!-- #### -->
+
+<div class="col-xs-6">
+
+</div>
+<div class="clear"></div>
+
+        <!-- 
       <div class="one_third">
         <div class="tab-wrapper clear">
           <ul class="tab-nav clear">
             <li><a href="#tab-1">Sign In</a></li>
           </ul>
           		<div class="tab-container">
-            		<!-- Tab Content -->
+            		
             		<div id="tab-1" class="tab-content clear">
             		<form method="post" action=""  name="submitform" onsubmit="return validate1()">
             		<?php
@@ -150,7 +153,7 @@ else
               		</ul><input type=submit value=" Login  " name="submitlogin" class="button small gradient red"/>
             		</form>
             		</div>
-            		<!-- / Tab Content -->
+            		
           		</div>
         </div>
       </div>
@@ -158,11 +161,11 @@ else
       <div class="one_third">
         <div class="tab-wrapper clear">
           <ul class="tab-nav clear">
-            <li><a href="#tab-1">Forgot your Password</a></li>
+            <li><a href="#tab-2">Password Recovery</a></li>
           </ul>
           <div class="tab-container">
-            <!-- Tab Content -->
-            <div id="tab-1" class="tab-content clear">
+            
+            <div id="tab-2" class="tab-content clear">
              <form method="post" action="" onsubmit="return validate2()" name="recoverform">
            
              <?php
@@ -193,17 +196,16 @@ else
 			 ?>
               </form>
             </div>
-            <!-- / Tab Content -->
+           
           </div>
         </div>
       </div>
-      
     </div>
-    <!-- ################################################################################################ -->
     <div class="clear"></div>
   </div>
 </div>
 </div>
+-->
 <?php
 include("footer.php");
 ?>
