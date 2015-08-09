@@ -333,6 +333,7 @@ $rschatuser=mysqli_fetch_array($qchatuser);
 }
 ?>
 <!-- Footer -->
+<br>
 <div class="wrapper row4">
   <div id="copyright" class="clear">
     <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="index.php">Famiglia</a></p>
