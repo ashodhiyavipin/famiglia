@@ -87,6 +87,10 @@ else
 	<form name="indexform" method="post" action="" onsubmit="return validate()">
 		<div class="row">
 			<div class="col-xs-12">
+			<h3>Register with us!</h3>
+			<br>
+			</div>
+			<div class="col-xs-12">
 			<label class="lead">Your name</label><input type="text" class="form-control" name="firstname" placeholder="Your first name e.g. John"/>
 			</div>
 			<div class="col-xs-12">
@@ -100,21 +104,28 @@ else
 			</div>
 			<div class="col-xs-12">
 			<label class="lead">Please confirm password</label><input type="password" class="form-control" name="confirmpassword" placeholder="Confirm your password" />
-			<div class="col-xs-12">
 			<?php $tomorrow = mktime(0,0,0,date("m"),date("d"),date("Y")-18); ?>
+			<div class="col-xs-12">
 			<label class="lead">Your birthdate</label><input type="date" class="form-control" name="dob" />
 			</div>
 			<div class="col-xs-4">
-			<label class="lead">Gender</label>
+				<label class="lead">Gender</label>
 			</div>
-			<div class="col-xs-4">
-			<label>Male</label><input type="radio" name="gender" value="Male" />
-			</div>
-			<div class="col-xs-4">
-			<label>Female</label><input type="radio" name="gender" value="Female" />
+			<div class="btn-group col-xs-8" data-toggle="buttons">
+				
+					<label class="btn btn-primary">
+						<input type="radio" name="gender" value="Male" id="option1"/>Male
+					</label>
+				
+			
+				
+					<label class="btn btn-primary">
+						<input type="radio" name="gender" value="Female" id="option2"/>Female
+					</label>
+				
 			</div>
 			<div class="col-xs-12">
-			<input type="submit" value="Signup!" name="signup" class="btn btn-primary btn-lg btn-block"/>
+				<input type="submit" value="Signup!" name="signup" class="btn btn-primary btn-lg btn-block"/>
 			</div>
 		</div>
 		</div>
@@ -126,7 +137,28 @@ else
 ?>
 
 <div class="col-xs-6">
+	<form method="post" action="" name="submitform" onsubmit="return validate1()">
+		<?php
+		if(isset($msglogin))
+			{
+				echo "<strong>$msglogin</strong>";
+			}
+		?>
+		<div class="row">
+			<h3>Login</h3>
+			<div class="col-xs-12">
+			<label>Username/Email address</label><input type="text" name=username size="30" class="form-control"/>
+			</div>
+			<div class="col-xs-12">
+			<label>Password</label><input type="password" name="password" size="30" class="form-control"/>
+			</div>
+			<div class="col-xs-12">
+				<input type="submit" value="Login" name="submitlogin" class="btn btn-primary btn-lg btn-block" />
+			</div>
 
+
+		</div>
+	</form>
 </div>
 <div class="clear"></div>
 
