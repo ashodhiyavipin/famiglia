@@ -1,3 +1,13 @@
+<head>
+<style>
+.form-control1 {
+width:105%;
+margin-left:-15px;
+border-radius: 4px;
+border: 1px solid #ccc;
+}
+</style>
+</head>
 <?php
 session_start();
 if(isset($_SESSION[profileid]))
@@ -75,6 +85,7 @@ $_SESSION[setid] = rand();
 <!-- content -->
 <div class="wrapper row3">
 <div id="container-fluid">
+
 	<!-- ################################################################################################ -->
 	<?php
 if(strlen($msg) == 31)
@@ -106,7 +117,7 @@ else
 			<label class="lead">Please confirm password</label><input type="password" class="form-control" name="confirmpassword" placeholder="Confirm your password" />
 			<?php $tomorrow = mktime(0,0,0,date("m"),date("d"),date("Y")-18); ?>
 			<div class="col-xs-12">
-			<label class="lead">Your birthdate</label><input type="date" class="form-control" name="dob" />
+			<label class="lead">Your birthdate</label><input type="date" class="form-control1" name="dob" />
 			</div>
 			<div class="col-xs-4">
 				<label class="lead">Gender</label>
@@ -116,9 +127,6 @@ else
 					<label class="btn btn-primary">
 						<input type="radio" name="gender" value="Male" id="option1"/>Male
 					</label>
-				
-			
-				
 					<label class="btn btn-primary">
 						<input type="radio" name="gender" value="Female" id="option2"/>Female
 					</label>
