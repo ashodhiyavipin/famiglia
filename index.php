@@ -94,6 +94,7 @@ else
 		?>
 		<div class="col-xs-6">
 			<form name="indexform" method="post" action="" onsubmit="return validate()">
+			<input type="hidden" name="setid" value="<?php echo $_SESSION[setid]; ?>">
 				<div class="row">
 					<div class="col-xs-12">
 						<h3>Register with us!</h3>
@@ -102,26 +103,33 @@ else
 					<div class="col-xs-12">
 						<label class="lead">Your name</label>
 						<input type="text" class="form-control" name="firstname" placeholder="Your first name e.g. John"/>
+						<br />
 					</div>
 					<div class="col-xs-12">
 						<label class="lead">Your family name</label>
 						<input type="text" class="form-control" name="lastname" placeholder="Your family name or last name e.g. Doe" />
+						<br />
 					</div>
 					<div class="col-xs-12">
 						<label class="lead">Your Email</label>
 						<input type="email" class="form-control" name="emailid" placeholder="Your email e.g. johndoe@example.com" />
+						<br />
 					</div>
 					<div class="col-xs-12">
 						<label class="lead">Choose your password</label>
 						<input type="password" class="form-control" name="password" placeholder="Choose a password" />
+						<br />
 					</div>
 					<div class="col-xs-12">
 						<label class="lead">Please confirm password</label>
 						<input type="password" class="form-control" name="confirmpassword" placeholder="Confirm your password" />
+						<br />
+					</div>
 						<?php $tomorrow = mktime(0, 0, 0, date("m"), date("d"), date("Y") - 18); ?>
 						<div class="col-xs-12">
 							<label class="lead">Your birthdate</label>
-							<input type="date" class="form-control1" name="dob" />
+							<input type="date" class="form-control" name="dob" />
+							<br />
 						</div>
 						<div class="col-xs-4">
 							<label class="lead">Gender</label>
@@ -156,14 +164,18 @@ else
 			}
 			?>
 			<div class="row">
-				<h3>Login</h3>
 				<div class="col-xs-12">
-					<label>Username/Email address</label>
+				<h3>Login</h3>
+				<br />
+				</div>
+				<div class="col-xs-12">
+					<label class="lead">Username/Email address</label>
 					<input type="text" name=username size="30" class="form-control"/>
 				</div>
 				<div class="col-xs-12">
-					<label>Password</label>
+					<label class="lead">Password</label>
 					<input type="password" name="password" size="30" class="form-control"/>
+					<br />
 				</div>
 				<div class="col-xs-12">
 					<input type="submit" value="Login" name="submitlogin" class="btn btn-primary btn-lg btn-block" />
