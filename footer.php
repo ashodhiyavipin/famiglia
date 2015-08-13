@@ -1,5 +1,5 @@
 <?php
-session_start(); // Developed by www.freestudentprojects.com
+session_start();
 $basename = basename($_SERVER['REQUEST_URI']);
 include("dbconnection.php");
 ?>

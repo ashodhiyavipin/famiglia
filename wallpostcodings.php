@@ -1,5 +1,5 @@
 <?php
-session_start(); // Developed by www.freestudentprojects.com
+session_start();
 $pagename = basename($_SERVER['PHP_SELF']);
 $datetime  = date("Y-m-d h:i:s");
 if(!isset($_SESSION[profileid]))

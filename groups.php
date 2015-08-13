@@ -1,5 +1,5 @@
 <?php
-session_start(); // Developed by www.freestudentprojects.com
+session_start();
 include("dbconnection.php");
 
   

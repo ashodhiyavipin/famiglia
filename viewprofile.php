@@ -1,5 +1,5 @@
 <?php
-session_start(); // Developed by www.freestudentprojects.com
+session_start();
 include("dbconnection.php");
 $sqlsel = mysqli_query($con,"SELECT * FROM profile where profileid='$_GET[friend]'");
 $rsrec = mysqli_fetch_array($sqlsel);

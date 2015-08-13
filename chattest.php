@@ -1,5 +1,5 @@
 <?php
-session_start(); // Developed by www.freestudentprojects.com
+session_start();
 include("dbconnection.php");
 $sql="insert into profile(firstname,lastname,emailid,password,dob,gender)
 values('$_POST[firstname]','$_POST[lastname]','$_POST[emailid]','$_POST[password]','$_POST[dob]','$_POST[gender]')";

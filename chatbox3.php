@@ -1,5 +1,5 @@
 <?php
-session_start(); // Developed by www.freestudentprojects.com
+session_start();
 include("dbconnection.php");
 //$sqlmsgloop = "SELECT * FROM  messages where ((senderid='12' and reciverid='21') OR (senderid='21' and reciverid='12')) ";
 $sqlmsgloop = "SELECT * FROM  messages where (senderid='$_SESSION[chat3]' and reciverid='$_SESSION[profileid]') OR (senderid='$_SESSION[profileid]' and reciverid='$_SESSION[chat3]')";

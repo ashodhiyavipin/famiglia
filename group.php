@@ -1,5 +1,5 @@
 <?php
-session_start(); // Developed by www.freestudentprojects.com
+session_start();
 include("header.php");
 include("dbconnection.php");
 $datetime  = date("Y-m-d h:i:s");

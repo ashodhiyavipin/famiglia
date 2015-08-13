@@ -1,5 +1,5 @@
 <?php
-session_start(); // Developed by www.freestudentprojects.com
+session_start();
 include("dbconnection.php");
 
 $sql_res=mysqli_query($con,"select * from profile where profileid='$_GET[q]'");
