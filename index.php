@@ -73,7 +73,8 @@ $msgupdpass =  "<br><font color='red'>Failed to login..</font>";
 }
 else
 {
-$msgupdpass = "<br>Password Updated successfully..";
+$msgupdpass = "<div class='alert alert-success fade in'><a href='#' class='close' data-dismiss='alert'>&times;</a>
+				<strong>Success!</strong> Your password has been reset successfully!</div>";
 }
 }
 include("header.php");
@@ -186,59 +187,62 @@ else
 	<div>
 		&nbsp;
 	</div>
-	<div class="one_third">
-		<div class="tab-wrapper clear">
-			<ul class="tab-nav clear">
-				<li>
-					<a href="#tab-2">Password Recovery</a>
-				</li>
-			</ul>
-			<div class="tab-container">
-				<div id="tab-2" class="tab-content clear">
+	<div class="col-xs-6">
+		<div class="row">
+			<div class="col-xs-12">
+				<h3>
+					Password Recovery
+				</h3>
+			</div>
+		</div>
+		<div class="row">
 					<form method="post" action="" onsubmit="return validate2()" name="recoverform">
 						<?php
 						echo $msgupdpass;
 						if(isset($_POST[submitforgetpwd]))
 						{
 						?>
-						<ul class="list arrow">
+						<div class="col-xs-12">
 							<input type="hidden" name="emailidcondition" value="2" />
-							<li>
-								<strong>Email ID</strong>
-								<input name=emailidss type=text size="30" value="<?php echo $_POST[emailids]; ?>" readonly />
-							</li>
-							<li>
-								<strong>New Password</strong>
-								<input name=newpass type=password size="30" />
-							</li>
-							<li>
-								<strong>Confirm Password</strong>
-								<input name=confpass type=password size="30" />
-							</li>
-						</ul>
-						<input type="submit" value="Reset Password" name="btnresetpassword" size="30" class="button small gradient red" />
+						</div>
+						<div class="col-xs-12">
+								<label class="lead">Email ID</label>
+								<input name="emailidss" type="text" size="30" value="<?php echo $_POST[emailids]; ?>" readonly class="form-control"/>
+								<br />
+						</div>
+						<div class="col-xs-12">
+								<label class="lead">New Password</label>
+								<input name="newpass" type="password" size="30" class="form-control"/>
+								<br />
+						</div>
+						<div class="col-xs-12">
+								<label class="lead">Confirm Password</label>
+								<input name="confpass" type="password" size="30" class="form-control"/>
+								<br />
+						</div>
+						<div class="col-xs-12">
+						<input type="submit" value="Reset Password" name="btnresetpassword" size="30" class="btn btn-primary btn-lg btn-block" />
+						</div>
 						<?php
 						}
 						else
 						{
 						?>
-						<ul class="list arrow">
-							<li>
-								<strong>Enter Email ID</strong>
+						<div class="col-xs-12">
+								<label class="lead">Enter Email ID</label>
 								<input type="hidden" name="emailidcondition" value="1" />
-								<input name=emailids type=text size="30" />
-							</li>
-						</ul>
-						<input type=submit value=" Recover Password  " name="submitforgetpwd" class="button small gradient red"/>
+								<input name="emailids" type="text" size="30" class="form-control"/>
+								<br />
+						</div>
+						<div class="col-xs-12">
+						<input type="submit" value="Recover my password!" name="submitforgetpwd" class="btn btn-primary btn-lg btn-block"/>
+						</div>
 						<?php
 						}
 						?>
 					</form>
-				</div>
 			</div>
 		</div>
-	</div>
-</div>
 <div class="clear"></div>
 <?php
 include ("footer.php");
