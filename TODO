@@ -6,15 +6,15 @@ The file is simple to read the first line contains the name of the file
 and the next line after the header contains a list of things to be done on the file.
 
 ###index.php###
-1. Have a pattern in the background as img and repeat infinitely.
-2. redesign the signup form using bootstrap properties.
-3. add new fields to the signup form 1. username 2. mobile 3. city.
-4. if possible add a way for them select city by auto suggest using php mysql and ajax.
+1. Have a pattern in the background as img and repeat infinitely. [inprocess]
+2. redesign the signup form using bootstrap properties.			[Completed]
+3. add new fields to the signup form 1. username 2. mobile 3. city.	[deprecated]
+4. if possible add a way for them select city by auto suggest using php mysql and ajax. [deprecated]
 
 #######################################
 
 ###header.php###
-1. change the friends menu to family.
+1. change the friends menu to family. 
 2. remove the search option in sub menu and change it to view family.
 3. delete view friends request.
 
