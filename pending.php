@@ -38,7 +38,7 @@ if(isset($_GET[friend]))
 			$friend= mysqli_query($con, "SELECT * from friends where profileid2='$_SESSION[profileid]' and requeststatus='pending'");
 			if(mysqli_num_rows($friend) ==0)
 			{
-			echo "<h2>No Pending Friend Request</h2>";
+			echo "<h2>No Pending Family Requests</h2>";
 			}
 			else
 			{
