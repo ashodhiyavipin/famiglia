@@ -16,44 +16,42 @@ if($_SESSION[setid] == $_GET[setid])
 									{
 									?>
 										<script type="text/javascript">
-										alert("Friend request sent successfully..");
+											alert("Request sent Successfully");
 										</script>
 									<?php
-                                    }
-	}
-	
-	if(isset($_GET[profilecanid]))
-	{
-		$insresult =  mysqli_query($con,"DELETE FROM friends where friendid='$_GET[profilecanid]'");
-							
+									}
+									}
+
+									if(isset($_GET[profilecanid]))
+									{
+									$insresult =  mysqli_query($con,"DELETE FROM friends where friendid='$_GET[profilecanid]'");
+
 									if(!$insresult)
 									{
-										echo mysqli_error($con);
+									echo mysqli_error($con);
 									}
 									else
 									{
 									?>
 										<script type="text/javascript">
-										alert("Friend request cancelled successfully..");
+											alert("Request Cancelled!");
 										</script>
 									<?php
-                                    }
-	}
-}
-$_SESSION[setid] = rand();
+									}
+									}
+									}
+									$_SESSION[setid] = rand();
 
-if(isset($_GET[search]))
-{
-$ch=$_GET[search];
-$sqlprofiles= mysqli_query($con,"SELECT * from profile where username like '%$ch%' or firstname like '%$ch%' or lastname like '%$ch%'");
-}
-else
-{
-$sqlprofiles = mysqli_query($con,"SELECT * FROM profile where profileid!='$_SESSION[profileid]'");
-}
-
-
-?>
+									if(isset($_GET[search]))
+									{
+									$ch=$_GET[search];
+									$sqlprofiles= mysqli_query($con,"SELECT * from profile where username like '%$ch%' or firstname like '%$ch%' or lastname like '%$ch%'");
+									}
+									else
+									{
+									$sqlprofiles = mysqli_query($con,"SELECT * FROM profile where profileid!='$_SESSION[profileid]'");
+									}
+								?>
 <!-- content -->
 <div class="wrapper row3">
   <div id="container">
@@ -89,13 +87,13 @@ $sqlprofiles = mysqli_query($con,"SELECT * FROM profile where profileid!='$_SESS
        		<ul class="nospace clear">
         	<li class="one_quarter first"> 
       		<?php
-		  	}
-		  	else
-		  	{
+			}
+			else
+			{
 		  	?>
         	<li class="one_quarter">
       		<?php
-		  	}
+			}
 	 		?>
           	<figure class="team-member">
             <?php
@@ -117,23 +115,17 @@ $sqlprofiles = mysqli_query($con,"SELECT * FROM profile where profileid!='$_SESS
               <p class="team-title"><?php echo $rsnofriends[0]; ?> friends</p>
               <p class="read-more">
 	            <?php
-				if(mysqli_num_rows($sqlfrndreqstatus) == 1)
-				{
+				if (mysqli_num_rows($sqlfrndreqstatus) == 1) {
 
-					  if($rsfrndreqstatus[requeststatus] =='accepted')
-					  {
-						 echo "<strong>$rsfrndreqstatus[friendtype]</strong>"; 
-					  }
-					  else if($rsfrndreqstatus[requeststatus] =='pending')
-					  {
-	echo "<strong>
-	<a href='searchfriends.php?search=".$_GET[search]."&check=".$_GET[check]."&profilecanid=".$rsfrndreqstatus[0]."&setid=".$_SESSION[setid]."'>Cancel friend request</strong></a>";
-					  }
+					if ($rsfrndreqstatus[requeststatus] == 'accepted') {
+						echo "<strong>$rsfrndreqstatus[friendtype]</strong>";
+					} else if ($rsfrndreqstatus[requeststatus] == 'pending') {
+						echo "<strong>
+	<a href='searchfriends.php?search=" . $_GET[search] . "&check=" . $_GET[check] . "&profilecanid=" . $rsfrndreqstatus[0] . "&setid=" . $_SESSION[setid] . "'>Cancel Request</strong></a>";
+					}
+				} else {
+					echo "<strong><a href='searchfriends.php?search=" . $_GET[search] . "&check=" . $_GET[check] . "&profilereqid=$rspro[profileid]&setid=$_SESSION[setid]'>Ask to Join Family &raquo;</a></strong>";
 				}
-				else
-				{
-				echo "<strong><a href='searchfriends.php?search=".$_GET[search]."&check=".$_GET[check]."&profilereqid=$rspro[profileid]&setid=$_SESSION[setid]'>Send Friend Request &raquo;</a></strong>";
-				}             
 				?>
               </p>
               <p class="team-description">&nbsp;</p>
@@ -148,21 +140,21 @@ $sqlprofiles = mysqli_query($con,"SELECT * FROM profile where profileid!='$_SESS
 			?>
 			</ul>
 			<?php
-            $i=0;
+			$i = 0;
 			}
 			else
 			{
-            $i++;
+			$i++;
 			}
             ?>
-      <?php	  	
-	  }
+      <?php
+				}
 	  ?>
     </section>
     <!-- ################################################################################################ -->
     <div class="clear"></div>
   </div>
 </div>
-<?php 
-include("footer.php");
+<?php
+	include ("footer.php");
 ?>
