@@ -32,7 +32,7 @@ if($_POST[setid]==$_SESSION[setid])
 			  }
 			  else
 			  {
-			   $msg ="<br> Registered successfully...";
+			   $msg = TRUE;
 			  }
 		}
 		else
@@ -82,11 +82,11 @@ $_SESSION[setid] = rand();
 ?>
 <!-- content -->
 <div class="wrapper row3">
-	<div id="container-fluid">
-
+	<div class="container-fluid">
+		<div class="row">
 		<!-- ################################################################################################ -->
 		<?php
-if(strlen($msg) == 31)
+if(strlen($msg) == TRUE)
 {
 echo "<div class='alert alert-success fade in'><a href='#' class='close' data-dismiss='alert'>&times;</a>
 				<strong>Success!</strong> You have registered with us successfully!</div>";
@@ -94,7 +94,7 @@ echo "<div class='alert alert-success fade in'><a href='#' class='close' data-di
 else
 {
 		?>
-		<div class="col-xs-6">
+		<div class="col-xs-5">
 			<form name="indexform" method="post" action="" onsubmit="return validate()">
 			<input type="hidden" name="setid" value="<?php echo $_SESSION[setid]; ?>">
 				<div class="row">
@@ -150,15 +150,13 @@ else
 							<input type="submit" value="Signup!" name="signup" class="btn btn-primary btn-lg btn-block"/>
 						</div>
 					</div>
-				</div>
-			</form>
-		</div>
-	</div>
+				</form>
+			</div>
 	<?php
 	}
 	?>
-
-	<div class="col-xs-6">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-5">
 		<form method="post" action="" name="submitform" onsubmit="return validate1()">
 			<?php
 			if (isset($msglogin)) {
@@ -185,10 +183,8 @@ else
 			</div>
 		</form>
 	</div>
-	<div>
-		&nbsp;
-	</div>
-	<div class="col-xs-6">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-5">
 		<div class="row">
 			<div class="col-xs-12">
 				<h3>
@@ -244,6 +240,10 @@ else
 					</form>
 			</div>
 		</div>
+		
+		</div>
+	</div>
+</div>
 <div class="clear"></div>
 <?php
 include ("footer.php");
