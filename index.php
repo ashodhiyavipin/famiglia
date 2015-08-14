@@ -88,7 +88,8 @@ $_SESSION[setid] = rand();
 		<?php
 if(strlen($msg) == 31)
 {
-echo "<h2>Registered successfully...</h2>";
+echo "<div class='alert alert-success fade in'><a href='#' class='close' data-dismiss='alert'>&times;</a>
+				<strong>Success!</strong> You have registered with us successfully!</div>";
 }
 else
 {
