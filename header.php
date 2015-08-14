@@ -132,11 +132,11 @@ if(isset($_SESSION[profileid]))
           </ul>
       </li>
       <li><a href="wallpostsingleuser.php" title="Elements">My Wallpost</a></li>
-      <li class="dropdown"><a data-toggle="dropdown" href="" title="Elements" class="dropdown-toggle">Friends <b class="caret"></b></a>
+      <li class="dropdown"><a data-toggle="dropdown" href="" title="Elements" class="dropdown-toggle">Family <b class="caret"></b></a>
       	<ul role="menu" class="dropdown-menu">
-        	<li><a href="friendslist.php" title="Friends list">Friends list</a></li>
-          <li><a href="friendrequest.php" title="Search friends">Search friends</a></li>
-          <li><a href="pending.php" title="View Friend request">View Friend request</a></li>           
+        	<li><a href="friendslist.php" title="Friends list">View Family Members</a></li>
+          <li><a href="friendrequest.php" title="Search friends">Search Family Members</a></li>
+          <li><a href="pending.php" title="View Friend request">View Family Member Requests</a></li>           
          	</ul>
       </li>
       <li><a href="viewmessage.php" title="Portfolio Layouts">Message</a></li>
