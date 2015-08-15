@@ -14,14 +14,14 @@ and the next line after the header contains a list of things to be done on the f
 #######################################
 
 ###header.php###
-1. change the friends menu to family. 
-2. remove the search option in sub menu and change it to view family.
-3. delete view friends request.
+1. change the friends menu to family. [done]
+2. remove the search option in sub menu and change it to view family. [done]
+3. delete view friends request. [done]
 
 #######################################
 
 ###leftsidebar.php###
-1. redesign the profile image display.
+1. redesign the profile image display. 
 2. redesign the No. of friends display with bootstrap.
 3. redesign the Groups display with bootstrap.
 4. get rid of 1. in leftsidebar below the Groups.
