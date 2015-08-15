@@ -1,13 +1,3 @@
-<head>
-	<style>
-        .form-control1 {
-            width: 105%;
-            margin-left: -15px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-	</style>
-</head>
 <?php
 session_start();
 if (isset($_SESSION[profileid])) {
