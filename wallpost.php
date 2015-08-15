@@ -4,16 +4,16 @@ include("fancybox.php");
 include("wallpostcodings.php");
 ?>
 <!-- content -->
-<div class="wrapper row3">
-  <div id="container">
+  <div id="container-fluid">
     <!-- ################################################################################################ -->
-    <div id="sidebar_1" class="sidebar one_quarter first">
+    <div class="row">
+    <div id="" class="col-xs-3">
 		<?php echo include("leftsidebar.php"); ?>
     </div>
     <!-- ################################################################################################ -->
     
     
-    <div class="one_half">
+    <div class="col-xs-6">
       <div id="respond">
 
         <h2>Wallpost</h2>
@@ -380,7 +380,7 @@ echo "</div>";
       </div>
     </div>
     <!-- ################################################################################################ -->
-    <div id="sidebar_2" class="sidebar one_quarter">
+    <div id="" class="col-xs-3">
     <?php
 	include("rightsidebar.php");
 	?>
