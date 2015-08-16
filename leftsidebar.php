@@ -4,22 +4,22 @@ include ("dbconnection.php");
 ?>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xs-12">
-			<?php echo "<b>Welcome " . $fnamesession . " " . $lnamesession . "</b><hr>";
+		<div class="col-xs-12 col-sm-12">
+			<?php
 			if ($imgpathsession == "") {
 				echo "<img src='images/profilepic.jpg' class='img-thumbnail'>";
 			} else {
 				echo "<img src='uploads/$imgpathsession' class='img-thumbnail'>";
 			}
+			echo "<h2>" . $fnamesession . " " . $lnamesession . "</h2><hr>";
 			?>
-  			<br>
 		</div>
-		<div class="col-xs-12"> 
+		<div class="col-xs-12 col-sm-12">
 			<?php
 			$fri = mysqli_query($con, "SELECT * FROM friends where ((profileid1='$_SESSION[profileid]' or profileid2='$_SESSION[profileid]') and requeststatus='accepted') OR ((profileid2='$_SESSION[profileid]' or profileid1='$_SESSION[profileid]') and requeststatus='accepted')");
 			?>
 			    
-				<h2>No. of friends - (<?php echo mysqli_num_rows($fri); ?>)</h2>
+				<h3>You have <?php echo mysqli_num_rows($fri); ?> friends</h3>
 				<?php
 				$friend = mysqli_query($con, "SELECT * from friends where ((profileid1='$_SESSION[profileid]' or profileid2='$_SESSION[profileid]') and requeststatus='accepted') OR ((profileid2='$_SESSION[profileid]' or profileid1='$_SESSION[profileid]') and requeststatus='accepted') ");
 			
@@ -39,8 +39,7 @@ include ("dbconnection.php");
 					} else {
 						$profileimage = "uploads/" . $pic[imagepath];
 					}
-					echo "<a href='viewprofile.php?friend=$friendsprofileid'  class='one_sixth'><img src='$profileimage' class='icon-desktop icon-6x img-thumbnail'></a>";
-					echo "<p><a href='viewprofile.php?friend=$friendsprofileid'>" . $show[firstname] . "&nbsp;" . $show[lastname] . "</a><hr></p>";
+					echo "<a href='viewprofile.php?friend=$friendsprofileid' '><img src='$profileimage' class='profileimg img-thumbnail'></a> &nbsp; <a href='viewprofile.php?friend=$friendsprofileid'>" . $show[firstname] . "&nbsp;" . $show[lastname] . "</a><hr></p>";
 			
 				}
 			?>
@@ -75,7 +74,6 @@ include ("dbconnection.php");
 			
 				<?php
 				}
-			
 				}
 			    ?>
         </nav>
