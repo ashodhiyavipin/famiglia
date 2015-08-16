@@ -7,13 +7,13 @@ include("wallpostcodings.php");
   <div id="container-fluid">
     <!-- ################################################################################################ -->
     <div class="row">
-    <div id="" class="col-xs-3">
+    <div id="" class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
 		<?php echo include("leftsidebar.php"); ?>
     </div>
     <!-- ################################################################################################ -->
     
     
-    <div class="col-xs-6">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-7">
       <div id="respond">
 
         <h2>Wallpost</h2>
@@ -380,7 +380,7 @@ echo "</div>";
       </div>
     </div>
     <!-- ################################################################################################ -->
-    <div id="" class="col-xs-3">
+    <div id="" class="hidden-xs hidden-sm hidden-md col-lg-2">
     <?php
 	include("rightsidebar.php");
 	?>
