@@ -84,7 +84,7 @@ echo "<div class='alert alert-success fade in'><a href='#' class='close' data-di
 else
 {
 		?>
-		<div class="col-xs-5">
+		<div class="col-xs-12 col-sm-6 col-md-5">
 			<form name="indexform" method="post" action="" onsubmit="return validate()">
 			<input type="hidden" name="setid" value="<?php echo $_SESSION[setid]; ?>">
 				<div class="row">
@@ -145,8 +145,8 @@ else
 	<?php
 	}
 	?>
-	<div class="col-xs-2"></div>
-	<div class="col-xs-5">
+	<div class="hidden-xs hidden-sm col-md-2"></div>
+	<div class="col-xs-12 col-sm-6 col-md-5">
 		<form method="post" action="" name="submitform" onsubmit="return validate1()">
 			<?php
 			if (isset($msglogin)) {
@@ -173,8 +173,8 @@ else
 			</div>
 		</form>
 	</div>
-	<div class="col-xs-2"></div>
-	<div class="col-xs-5">
+	<div class="hidden-xs hidden-sm col-md-2"></div>
+	<div class="col-xs-12 col-sm-6 col-md-5">
 		<div class="row">
 			<div class="col-xs-12">
 				<h3>
