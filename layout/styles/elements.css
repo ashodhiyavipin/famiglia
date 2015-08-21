@@ -1,5 +1,5 @@
 /* Comment Messages  block*/
-.comments{display:block; position:relative; top:-35px; margin:15px 0; padding:15px 40px 15px 20px; border:1px solid #F00000; color:inherit;}
+.comments{display:block; top:-35px; margin:15px 0; padding:15px 40px 15px 20px; border:1px solid #F00000; color:inherit;}
 .comments a{background-color:transparent;}
 .comments.info{border-color:#A8A8A8;}
 .comments.warning{background-color:#FEE794; border-color:#FDC703;}

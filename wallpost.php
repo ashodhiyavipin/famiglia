@@ -302,7 +302,7 @@ $countcomments = mysqli_num_rows($resultcountonlycomments);
 
 if($countcomments > 3)
 {
-echo "<div class='comments info' ><a href='wallpostsingle.php?wallpostsinglepostid=$rs[0]'  > View all $countcomments Comments</a></div>";
+echo "<div class='comments info clear' ><a href='wallpostsingle.php?wallpostsinglepostid=$rs[0]'  > View all $countcomments Comments</a></div>";
 }
 
 //$result1 = mysqli_query($con, "SELECT * FROM comments ");
