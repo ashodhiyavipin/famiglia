@@ -1,8 +1,6 @@
 <!doctype html>
 <head>
-	<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+	<link href="layout/styles/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
 	<style>
 	* {
   box-sizing: border-box;
@@ -292,29 +290,22 @@ include("wallpostcodings.php");
 ?>
 <!-- content -->
 <body>
-  <div id="container-fluid">
+  <div class="container-fluid">
     <!-- ################################################################################################ -->
     <div class="row">
-    <div id="" class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
 		<?php echo include("leftsidebar.php"); ?>
     </div>
     <!-- ################################################################################################ -->
-    
-    
     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-7">
-      <div id="respond">
-
         <h2>Wallpost</h2>
-        
-        
-              <div class="wallpost">
         <div class="tab-wrapper clear">
           <ul class="tab-nav clear">
             <li><a href="#tab-1">Wall</a></li>
             <li><a href="#tab-2">Photos</a></li>
             <li><a href="#tab-3">Videos</a></li>
           </ul>
-          		<div class="tab-container">
+          <div class="tab-container">
             		<!-- Upload message -->
             		<div id="tab-1" class="tab-content clear">
             		        <form class="rnd5" action="" method="post" onsubmit="return validate()" name="messageform">
@@ -367,8 +358,7 @@ include("wallpostcodings.php");
             		<!-- / Tab Content -->
           		</div>
         </div>
-      </div>
-        <br />
+<br />
 <!-- WALL POST Message ################################3 -->
 <?php
 $result = mysqli_query($con,"SELECT   wallpost.*, profile.* FROM wallpost LEFT JOIN profile ON wallpost.profileid = profile.profileid where wallpost.groupid='0'
@@ -428,17 +418,14 @@ $fetchwplikesstatus = mysqli_fetch_array($resultwplikestotal);
 	if($rs[posttype] == "Video")
 	{	
 		echo "<h3><a href='#'>$rs[firstname] $rs[lastname]</a></h3> Shared video  ";
-		deleteid($rs[0]);
 	}
 	else if($rs[posttype] == "Photo")
 	{
 		echo "<h3><a href='#'>$rs[firstname] $rs[lastname]</a></h3> Shared photos ";
-		deleteid($rs[0]);
 	}
 	else if($rs[posttype] == "Wall")
 	{
 		echo "<h3><a href='#'>$rs[firstname] $rs[lastname]</a></h3> wrote ";
-		deleteid($rs[0]);
 	}
 			echo "<p>$rs[message]</p>";
 	echo"</div>";
@@ -564,7 +551,7 @@ if($rs[posttype] == "Photo")
 			echo "$hdmago <a href='wallpost.php?walllikeid=$rs[0]&sessionid=$_SESSION[setid]'>Like</a>";
 		}
 		echo " <a href='#'>$wplikestotal Likes</a></p>";
-		
+		deleteid($rs[0]);
 		echo "</li>";
 //Wallpost like and Unlike link ends here		
 
@@ -600,8 +587,7 @@ $timesago = floor($seconds_diff/3600/24);
 $hdmago =secondsToWords($seconds_diff);
 //Times ago Commentbox: Coding to compare date ends here
 
-			echo "<li>
-					<div class='avatar'>";
+			echo "<li><div class='avatar'>";
 
 
 //Code for comment profile image starts here
@@ -644,7 +630,6 @@ echo "</div>";
 		}
 echo " </li> </ul>";
 ?>
-
 <!-- Comment post with toggle box starts here  -->
 <div class='comments info' >
 		      <form class="rnd5" action="" method="post">
@@ -658,17 +643,15 @@ echo " </li> </ul>";
 <?php
 	}
 }
-
-?>     
-
-      </div>
-    </div>
+?>
+</div>
     <!-- ################################################################################################ -->
-    <div id="" class="hidden-xs hidden-sm hidden-md col-lg-2">
+    <div class="hidden-xs hidden-sm hidden-md col-lg-2">
     <?php
 	include("rightsidebar.php");
 	?>
-    </div>               <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
     <div class="clear"></div>
   </div>
 </div>
