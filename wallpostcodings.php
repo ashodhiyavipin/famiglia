@@ -89,7 +89,7 @@ function validate2()
 // Delete function to all posts
 function deleteid($delid)
 {
-	echo "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a class='close' href='$pagename?wallpostsinglepostid=$_GET[wallpostsinglepostid]&delwallpostid=$delid' onclick='return ConfirmDelete()'  style='float: right;vertical-align:top'>X</a>";
+	echo "<a href='$pagename?wallpostsinglepostid=$_GET[wallpostsinglepostid]&delwallpostid=$delid' onclick='return ConfirmDelete()'>Delete</a>";
 }
 //Delete function to all posts ends here
 

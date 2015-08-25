@@ -1,23 +1,305 @@
+<!doctype html>
+<head>
+	<link href="layout/styles/fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
+	<style>
+	* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand';
+  color: #7f8c8d;
+  font-size: 14px;
+  background-color: #ededed; }
+
+.bubble {
+  width: 100%;
+  padding: .5em 1em;
+  line-height: 1.4em;
+  padding: 20px;
+  background-color: #ecf0f1;
+  position: relative;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  text-align: left;
+  display: inline-block; }
+  .bubble:hover > .over-bubble {
+    opacity: 1; }
+
+.bubble-container {
+  width: 75%;
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  vertical-align: top;
+  display: inline-block; }
+
+.arrow {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 12px;
+  bottom: 25%;
+  height: 0;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #ecf0f1; }
+
+.timeline {
+  width: 560px;
+  display: block;
+  margin: auto;
+  background-color: #dde1e2;
+  padding-bottom: 2em;
+  -webkit-box-shadow: #bdc3c7 0 5px 5px;
+  -moz-box-shadow: #bdc3c7 0 5px 5px;
+  box-shadow: #bdc3c7 0 5px 5px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-bottom: 2em; }
+  .timeline li {
+    padding: 1em 0; }
+  .timeline li:nth-child(even) {
+    background-color: #d3d7d8; }
+
+.avatar {
+  width: 18%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  overflow: hidden;
+  margin-left: 2%; }
+  .avatar img {
+    width: 100%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid #ecf0f1;
+    position: relative; }
+  .avatar:hover > .hover {
+    cursor: pointer;
+    opacity: 1; }
+
+.hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #3498db;
+  top: 0;
+  font-size: 1.8em;
+  border: 5px solid #5cc0ff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  padding-top: 24%;
+  opacity: 0;
+  font-family: 'FontAwesome';
+  font-weight: 300;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease; }
+
+.first {
+  width: 560px;
+  display: block;
+  margin: auto;
+  background-color: #3498db;
+  text-shadow: #2084c7 1px 1px 0;
+  padding: 1em 0 !important;
+  color: white;
+  text-align: center;
+  margin-top: 1em;
+  font-family: "Lato";
+  font-size: 1.6em;
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-top-left-radius: 8px;
+  border-top-left-radius: 8px;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-top-right-radius: 8px;
+  border-top-right-radius: 8px;
+  position: relative; }
+
+.icon-twitter {
+  font-size: 1.5em; }
+
+.new {
+  position: absolute;
+  right: 5%; }
+
+.over-bubble {
+  line-height: 1.4em;
+  padding-top: 10%;
+  background-color: rgba(236, 240, 241, 0.8);
+  position: relative;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  text-align: center;
+  display: inline-block;
+  position: absolute !important;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  font-size: 2.8em;
+  text-shadow: white 1px 1px 0; }
+
+.action {
+  margin-right: .3em;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in; }
+
+.icon-star {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease; }
+  .icon-star:hover {
+    cursor: pointer;
+    color: #f39c12; }
+
+.icon-retweet {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease; }
+  .icon-retweet:hover {
+    cursor: pointer;
+    color: #16a085; }
+
+.icon-mail-reply {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease; }
+  .icon-mail-reply:hover {
+    cursor: pointer;
+    color: #3498db; }
+
+h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: 'Lato';
+  display: inline-block;
+  margin-bottom: .2em;
+  color: #95a5a6; }
+
+.retweet {
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  right: 1em;
+  display: block;
+  background-color: #16a085;
+  padding: 4px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px; }
+  .retweet .icon-retweet {
+    color: white;
+    margin: auto;
+    width: 100%;
+    display: block;
+    font-size: 1.2em; }
+
+
+	</style>
+</head>
 <?php
 session_start();
 include("wallpostcodings.php");
 include_once("fancybox.php");
 ?>
 <!-- content -->
-<div class="wrapper row3">
-  <div id="container">
+<body>
+<div class="container-fluid">
+  <div class="row">
     <!-- ################################################################################################ -->
-    <div id="sidebar_1" class="sidebar one_quarter first">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
 		<?php echo include("leftsidebar.php"); ?>
     </div>
     <!-- ################################################################################################ -->
-    <div class="one_half">
-      <div id="respond">
-
-        <h2>Wallpost</h2>
-        
-        
-              <div class="wallpost">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-7">
+    <h2>Wallpost</h2>
+    <div class="wallpost">
         <div class="tab-wrapper clear">
           <ul class="tab-nav clear">
             <li><a href="#tab-1">Wall</a></li>
@@ -77,7 +359,7 @@ include_once("fancybox.php");
             		<!-- / Tab Content -->
           		</div>
         </div>
-      </div>
+        </div>
         <br />
         
 <!-- WALL POST Message ################################3 -->
@@ -106,7 +388,7 @@ $wplikesstatus  = mysqli_num_rows($resultwplikestotal);
 $fetchwplikesstatus = mysqli_fetch_array($resultwplikestotal);
 //Likes wallpost code ends here
 
-	echo "<section class='calltoaction opt1 clear'>";
+	echo "<ul class='timeline' style='list-style-type:none'> <li>";
 
 	//Code for profile image
 	$resultprofileimg = mysqli_query($con, "SELECT * FROM images WHERE imgid ='$rs[20]' ");
@@ -114,35 +396,32 @@ $fetchwplikesstatus = mysqli_fetch_array($resultwplikestotal);
 		echo $profileimgid;
 		if(mysqli_num_rows($resultprofileimg) == 0)
 		{	   
-			echo "<div class='one_fifth'><img src='images/profilepic.jpg' width=10 height=10  class='icon-desktop icon-3x' ></div>";
+			echo "<div class='avatar'><img src='images/profilepic.jpg'></div>";
 		}
 		else
 		{
-			echo "<div class='one_fifth'><img src='uploads/$rsprofileimg[imagepath]' width=10 height=10  class='icon-desktop icon-3x' ></div>";
+			echo "<div class='avatar'><img src='uploads/$rsprofileimg[imagepath]'></div>";
 		}
 	//Code for profile image ends here
 
 	   
-	echo "<div class='three_quarter '>";
+	echo "<div class='bubble-container'> <div class='bubble'>";
 	if($rs[posttype] == "Video")
 	{	
-		echo "<b><strong><a href='#'>$rs[firstname] $rs[lastname]</a> </strong>Shared video  ";
-		deleteid($rs[0]);	
-		echo "<br></b>";
+		echo "<h3><a href='#'>$rs[firstname] $rs[lastname]</a> </h3> Shared video  ";
+
 	}
 	else if($rs[posttype] == "Photo")
 	{
-		echo "<b><strong><a href='#'>$rs[firstname] $rs[lastname]</a> </strong>Shared photos ";
-		deleteid($rs[0]);	
-		echo "<br></b>";
+		echo "<h3><a href='#'>$rs[firstname] $rs[lastname]</a> </h3> Shared photos ";
+
 	}
 	else if($rs[posttype] == "Wall")
 	{
-		echo "<b><strong><a href='#'>$rs[firstname] $rs[lastname]</a> </strong>wrote ";
-		deleteid($rs[0]);	
-		echo "<br></b>";
+		echo "<h3><a href='#'>$rs[firstname] $rs[lastname]</a> </h3> wrote ";
 	}
 			echo "<p>$rs[message]</p>";
+	echo"</div>";
 
 if($rs[posttype] == "Video")
 {			
@@ -257,15 +536,15 @@ if($rs[posttype] == "Photo")
 		echo "<p>";
 		if($wplikesstatus == 1)
 		{
-			echo "<hr>$hdmago - <a href='wallpost.php?wallunlikeid=$fetchwplikesstatus[likeid]&sessionid=$_SESSION[setid]'>Unlike</a>";
+			echo "$hdmago <a href='wallpost.php?wallunlikeid=$fetchwplikesstatus[likeid]&sessionid=$_SESSION[setid]'>Unlike</a>";
 		}
 		else
 		{
-			echo "<hr>$hdmago - <a href='wallpost.php?walllikeid=$rs[0]&sessionid=$_SESSION[setid]'>Like</a>";
+			echo "$hdmago <a href='wallpost.php?walllikeid=$rs[0]&sessionid=$_SESSION[setid]'>Like</a>";
 		}
-		echo " - <a href='#'>$wplikestotal Likes</a></p>";
-		
-		echo "</div></section>";
+		echo "<a href='#'>$wplikestotal Likes</a></p>";
+		deleteid($rs[0]);
+		echo "</li>";
 //Wallpost like and Unlike link ends here		
 
 //Comments code starts here...
@@ -273,7 +552,7 @@ $sql = "SELECT     comments.*, profile.*, wallpost.*";
 $sql =  $sql . " FROM         comments LEFT OUTER JOIN";
 $sql =  $sql . "   profile ON comments.profileid = profile.profileid LEFT OUTER JOIN";
 $sql =  $sql . "   wallpost ON comments.publishid = wallpost.postid";
-$sql =  $sql . " WHERE     (comments.publishid = $rs[0]) AND (comments.commenttype = 'Wallpost') ORDER BY  comments.comentid DESC  LIMIT 0 , 3";
+$sql =  $sql . " WHERE     (comments.publishid = $rs[0]) AND (comments.commenttype = 'Wallpost') ORDER BY  comments.comentid DESC";
 $result1 = mysqli_query($con, $sql);
 
 //Query to count comments
@@ -285,11 +564,6 @@ $sqlcountonlycomments =  $sqlcountonlycomments . " WHERE     (comments.publishid
 $resultcountonlycomments = mysqli_query($con, $sqlcountonlycomments);
 $countcomments = mysqli_num_rows($resultcountonlycomments);
 //ommnents code ends here
-
-if($countcomments > 3)
-{
-echo "<div class='comments info' ><a href='wallpostsingle.php?wallpostsinglepostid=$rs[0]'  > View all $countcomments Comments</a></div>";
-}
 
 //$result1 = mysqli_query($con, "SELECT * FROM comments ");
 while($rs1 = mysqli_fetch_array($result1))
@@ -304,7 +578,7 @@ $timesago = floor($seconds_diff/3600/24);
 $hdmago =secondsToWords($seconds_diff);
 //Times ago Commentbox: Coding to compare date ends here
 
-			echo "<div class='comments info' ><li class='one_fifth'>";
+			echo "<li><div class='avatar'>";
 
 
 //Code for comment profile image starts here
@@ -313,17 +587,16 @@ $hdmago =secondsToWords($seconds_diff);
 		echo $profileimgid;
 		if(mysqli_num_rows($resultprofileimg) == 0)
 		{	   
-			echo "<div class='one_fourth'><img src='images/profilepic.jpg' width=10 height=10  class='icon-desktop icon-3x' ></div>";
+			echo "<img src='images/profilepic.jpg'>";
 		}
 		else
 		{
-			echo "<div class='one_fourth'><img src='uploads/$rsprofileimg[imagepath]' width=10 height=10  class='icon-desktop icon-3x' ></div>";
+			echo "<img src='uploads/$rsprofileimg[imagepath]'></div>";
 		}
 //Code for comment profile image ends here
 	
-			echo "</li>
-			<strong>$rs1[firstname] $rs1[lastname] </strong>wrote <a style='float: right;vertical-align:top' href='wallpost.php?delcmntid=$rs1[0]'><strong>X</strong></a><br>
-			$rs1[comment] <br>";
+			echo "<div class='bubble-container'>
+				<div class='bubble'><h4>$rs1[firstname] $rs1[lastname] </h4> commented <br /> $rs1[comment] <br /> </div>";
 			
 //Likes Comments code starts here
 $resultcmtlikes = mysqli_query($con, "SELECT * FROM likes WHERE publishid ='$rs1[0]' AND type='WallComment' ");
@@ -340,11 +613,13 @@ else
 {
 	echo "<br>$hdmago - <a href='wallpost.php?cmtlikeid=$rs1[0]&sessionid=$_SESSION[setid]'>Like</a>";
 }
-echo " - <a href='#'>$wplikescmttotal Likes</a>";
+echo " - <a href='#'>$wplikescmttotal Likes</a> ";
+echo "<a href='wallpost.php?delcmntid=$rs1[0]'><strong>Delete</strong></a> </p>";
 $cmtlikesstatus=0;
 //Likes Comments code ends here		
 echo "</div>";
 		}
+echo " </li> </ul>";
 ?>
 
 <!-- Comment post with toggle box starts here  -->
@@ -359,12 +634,10 @@ echo "</div>";
 <!-- Comment bost with toggle box ends here  -->  
 <?php
 }
-?>     
-
-      </div>
+?>
     </div>
     <!-- ################################################################################################ -->
-    <div id="sidebar_2" class="sidebar one_quarter">
+    <div class="hidden-xs hidden-sm hidden-md col-lg-2">
     <?php
 	include("rightsidebar.php");
 	?>
@@ -377,3 +650,5 @@ echo "</div>";
 <?php
 include("footer.php");
 ?>
+</body>
+</html>
