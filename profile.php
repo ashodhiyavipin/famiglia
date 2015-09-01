@@ -1,65 +1,51 @@
 <?php
 session_start();
-include("dbconnection.php");
-if($_POST[setid]==$_SESSION[setid])
-{
-	if (isset($_POST["updprofile"]))
-	{
-			
+include ("dbconnection.php");
+if ($_POST[setid] == $_SESSION[setid]) {
+	if (isset($_POST["updprofile"])) {
 
-			$sql = "UPDATE profile SET username='$_POST[username]',firstname='$_POST[fname]',lastname='$_POST[lname]',emailid='$_POST[emailid]',contactno='$_POST[cnumber]',dob='$_POST[dob]',gender='$_POST[gender]',status='Enabled',city='$_POST[city]' where profileid='$_SESSION[profileid]'";
-				if(!mysqli_query($con,$sql))
-				{
-					die('Error:'.mysqli_error($con));
-				}
-				else
-				{
-					$msg="<strong><font color='green'><br>Profile Updated successfully,.</font></strong>";
-				}
+		$sql = "UPDATE profile SET username='$_POST[username]',firstname='$_POST[fname]',lastname='$_POST[lname]',emailid='$_POST[emailid]',contactno='$_POST[cnumber]',dob='$_POST[dob]',gender='$_POST[gender]',status='Enabled',city='$_POST[city]' where profileid='$_SESSION[profileid]'";
+		if (!mysqli_query($con, $sql)) {
+			die('Error:' . mysqli_error($con));
+		} else {
+			$msg = "<strong><font color='green'><br>Profile Updated successfully,.</font></strong>";
+		}
 
 	}
 }
 
-if($_POST[setid]==$_SESSION[setid])
-{
-	if (isset($_POST["submitimg"]))
-	{
-				$imagename = $_FILES['profilepic']['name'];
-				$imgname = rand().$_FILES['profilepic']['name'];
-				move_uploaded_file($_FILES['profilepic']['tmp_name'],"uploads/". $imgname);
-				
-			//upload profile image code
-				$sql="INSERT INTO images(profileid,imagepath,status)
-	  VALUES('$_SESSION[profileid]','$imgname','Enabled')";	
-				if(!mysqli_query($con,$sql))
-				{
-					die('Error:'.mysqli_error($con));
-				}
-				else
-				{
-					$msg1="<strong><font color='green'><br>Profile Updated successfully,.</font></strong>";
-				}
-				$imgid = mysqli_insert_id($con);
-			//update profile image code
-			$sql = "UPDATE profile SET imgid='$imgid' where profileid='$_SESSION[profileid]'";
-				if(!mysqli_query($con,$sql))
-				{
-					die('Error:'.mysqli_error($con));
-				}
-				else
-				{
-					$msg1="<strong><font color='green'><br>Profile Image successfully,.</font></strong>";
-				}
+if ($_POST[setid] == $_SESSION[setid]) {
+	if (isset($_POST["submitimg"])) {
+		$imagename = $_FILES['profilepic']['name'];
+		$imgname = rand() . $_FILES['profilepic']['name'];
+		move_uploaded_file($_FILES['profilepic']['tmp_name'], "uploads/" . $imgname);
+
+		//upload profile image code
+		$sql = "INSERT INTO images(profileid,imagepath,status)
+	  VALUES('$_SESSION[profileid]','$imgname','Enabled')";
+		if (!mysqli_query($con, $sql)) {
+			die('Error:' . mysqli_error($con));
+		} else {
+			$msg1 = "<strong><font color='green'><br>Profile Updated successfully,.</font></strong>";
+		}
+		$imgid = mysqli_insert_id($con);
+		//update profile image code
+		$sql = "UPDATE profile SET imgid='$imgid' where profileid='$_SESSION[profileid]'";
+		if (!mysqli_query($con, $sql)) {
+			die('Error:' . mysqli_error($con));
+		} else {
+			$msg1 = "<strong><font color='green'><br>Profile Image successfully,.</font></strong>";
+		}
 
 	}
 }
 
-$sqlsel = mysqli_query($con,"SELECT * FROM profile where profileid='$_SESSION[profileid]'");
+$sqlsel = mysqli_query($con, "SELECT * FROM profile where profileid='$_SESSION[profileid]'");
 $rsrec = mysqli_fetch_array($sqlsel);
 
-$_SESSION[setid]  = rand();
+$_SESSION[setid] = rand();
 
-include("header.php");
+include ("header.php");
 ?>
 <!-- content -->
 <div class="wrapper row3">
@@ -75,29 +61,27 @@ include("header.php");
   <td colspan="2" align="center"><strong>Profile</strong><?php echo $msg; ?></td>
   </tr>
 
-<tr><td>User name</td><td><input name=username type=text size="30" value="<?php echo $rsrec[username] ; ?>"> </td></tr>
+<tr><td>User name</td><td><input name=username type=text size="30" value="<?php echo $rsrec[username]; ?>"> </td></tr>
 
-</tr><tr><td>First name</td><td><input name=fname type=text size="30" value="<?php echo $rsrec[firstname] ; ?>" /></td></tr>
-<tr><td>Last name</td><td><input name=lname type=text size="30" value="<?php echo $rsrec[lastname] ; ?>" /></td></tr>
-<tr><td>Email id</td><td><input name=emailid type=text size="30"  value="<?php echo $rsrec[emailid] ; ?>"   /></td></tr>
-<tr><td>Contact number</td><td><input name=cnumber type=text size="30"value="<?php echo $rsrec[contactno] ; ?>"   /></td>
+</tr><tr><td>First name</td><td><input name=fname type=text size="30" value="<?php echo $rsrec[firstname]; ?>" /></td></tr>
+<tr><td>Last name</td><td><input name=lname type=text size="30" value="<?php echo $rsrec[lastname]; ?>" /></td></tr>
+<tr><td>Email id</td><td><input name=emailid type=text size="30"  value="<?php echo $rsrec[emailid]; ?>"   /></td></tr>
+<tr><td>Contact number</td><td><input name=cnumber type=text size="30"value="<?php echo $rsrec[contactno]; ?>"   /></td>
 </tr>
-<tr><td>dob</td><td><input type="date" name="dob" value="<?php echo $rsrec[dob] ; ?>"   /></td></tr>
+<tr><td>dob</td><td><input type="date" name="dob" value="<?php echo $rsrec[dob]; ?>"   /></td></tr>
 <tr><td>gender</td><td>
 <select name="gender">
 <option value="" >select</option>
-<option value="Male" 
+<option value="Male"
 <?php
-if($rsrec[gender] == "Male")
-{
+if ($rsrec[gender] == "Male") {
 	echo "selected";
 }
 ?>
 >Male</option>
 <option value="Female"
 <?php
-if($rsrec[gender] == "Female")
-{
+if ($rsrec[gender] == "Female") {
 	echo "selected";
 }
 ?>>Female</option>
@@ -105,7 +89,7 @@ if($rsrec[gender] == "Female")
 </td></tr>
 
 
-<tr><td>city</td><td><input name=city type=text size="30" value="<?php echo $rsrec[city] ; ?>" /></td></tr>
+<tr><td>city</td><td><input name=city type=text size="30" value="<?php echo $rsrec[city]; ?>" /></td></tr>
 <tr>
   <td colspan="2" align="center"><input type="submit" name="updprofile" id="updprofile" value="Update profile"></td>
   </tr>
@@ -120,17 +104,14 @@ if($rsrec[gender] == "Female")
           <div class="push20">
             <h1></h1>
           <p><?php
-			
-			 echo "<b>Welcome ".$fnamesession. " ". $lnamesession ."</b><hr>";
-    
-            if($imgpathsession == "")
-	{	   
-		echo "<img src='images/profilepic.jpg' >";
-	}
-	else
-	{
-		echo "<img src='uploads/$imgpathsession' >";
-	}
+
+		echo "<b>Welcome " . $fnamesession . " " . $lnamesession . "</b><hr>";
+
+		if ($imgpathsession == "") {
+			echo "<img src='images/profilepic.jpg' >";
+		} else {
+			echo "<img src='uploads/$imgpathsession' >";
+		}
        ?>
        <hr>
        <form method="post" action="" enctype="multipart/form-data">
@@ -139,23 +120,23 @@ if($rsrec[gender] == "Female")
        <input type="submit" name="submitimg" value="Change profile pic">
        </form>
        </div>
-        
-      
+
+
    </p>
         </div>
       </div>
-      
+
     </section>
 
 <?php
-$fri = mysqli_query($con,"SELECT * FROM friends where (profileid1='$_SESSION[profileid]' or profileid2='$_SESSION[profileid]') and requeststatus='accepted'");
-?>    
+$fri = mysqli_query($con, "SELECT * FROM friends where (profileid1='$_SESSION[profileid]' or profileid2='$_SESSION[profileid]') and requeststatus='accepted'");
+?>
     <!-- ################################################################################################ -->
     <section>
-      <h2><?php echo $rsrec[firstname] . " " .$rsrec[lastname]; ?>'s Friends - (<?php echo mysqli_num_rows($fri); ?> friends)</h2>
-      
+      <h2><?php echo $rsrec[firstname] . " " . $rsrec[lastname]; ?>'s Friends - (<?php echo mysqli_num_rows($fri); ?> friends)</h2>
+
 <?php
-$friend= mysqli_query($con, "SELECT * from friends where (profileid1='$_SESSION[profileid]' or profileid2='$_SESSION[profileid]') and requeststatus='accepted'");
+$friend = mysqli_query($con, "SELECT * from friends where (profileid1='$_SESSION[profileid]' or profileid2='$_SESSION[profileid]') and requeststatus='accepted'");
 ?>
       <ul class="nospace clear">
 <?php
@@ -172,7 +153,7 @@ while($rs = mysqli_fetch_array($friend))
 	}
 	else
 	{
-    $profileimage="images/profilepic.jpg";		
+    $profileimage="images/profilepic.jpg";
 	}
 	//Count Number of friends in their profile
 	$sqlnofriends= mysqli_query($con,"SELECT COUNT(*) FROM  friends where (profileid1='$show[profileid]' OR profileid2='$show[profileid]') AND requeststatus='accepted'");
@@ -194,11 +175,11 @@ while($rs = mysqli_fetch_array($friend))
 		?>
           <figure class="team-member"><a href='viewprofile.php?friend=<?php echo $rs[profileid2]; ?>'><img src='<?php echo $profileimage; ?>' style="height=570px; width:570px;"></a>
           	<figcaption>
-              <p class="team-name"><?php echo "<a href='viewprofile.php?friend=$rs[profileid2]'>".$show[firstname]."&nbsp;". $show[lastname]. "</a>"; ?></p>
+              <p class="team-name"><?php echo "<a href='viewprofile.php?friend=$rs[profileid2]'>" . $show[firstname] . "&nbsp;" . $show[lastname] . "</a>"; ?></p>
               <p class="team-title">
               <strong>
 			  <?php
-              echo "No. of friends - " .$rsnofriends[0] . " "; 
+			echo "No. of friends - " . $rsnofriends[0] . " ";
 			  ?>
               </strong>
               </p>
@@ -218,5 +199,5 @@ while($rs = mysqli_fetch_array($friend))
 </div>
 <!-- Footer -->
 <?php
-include("footer.php");
+include ("footer.php");
 ?>
