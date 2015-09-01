@@ -22,8 +22,8 @@ and the next line after the header contains a list of things to be done on the f
 
 ###leftsidebar.php###
 1. redesign the profile image display. [done]
-2. redesign the No. of friends display with bootstrap.
-3. redesign the Groups display with bootstrap.
+2. redesign the No. of friends display with bootstrap.[done]
+3. redesign the Groups display with bootstrap.[done]
 4. get rid of 1. in leftsidebar below the Groups.
 
 ########################################
@@ -32,7 +32,7 @@ and the next line after the header contains a list of things to be done on the f
 1. redesign how events are displayed.
 2. recode the mysql statement to show only events from a users family.
 #bug when no events should be displayed the simple text of
-" has an event on called" gets displayed use if statement to check 
+" has an event on called" gets displayed use if statement to check
 whether the user has any upcoming events if not then display
 "No new upcoming events from your family."
 ########################################
