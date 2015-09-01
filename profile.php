@@ -132,13 +132,13 @@ if ($rsrec[gender] == "Female") {
 $fri = mysqli_query($con, "SELECT * FROM friends where (profileid1='$_SESSION[profileid]' or profileid2='$_SESSION[profileid]') and requeststatus='accepted'");
 ?>
     <!-- ################################################################################################ -->
-    <section>
+    <div>
       <h2><?php echo $rsrec[firstname] . " " . $rsrec[lastname]; ?>'s Friends - (<?php echo mysqli_num_rows($fri); ?> friends)</h2>
 
 <?php
 $friend = mysqli_query($con, "SELECT * from friends where (profileid1='$_SESSION[profileid]' or profileid2='$_SESSION[profileid]') and requeststatus='accepted'");
 ?>
-      <ul class="nospace clear">
+      <ul class="list-group clear">
 <?php
 $i=0;
 while($rs = mysqli_fetch_array($friend))
@@ -163,17 +163,17 @@ while($rs = mysqli_fetch_array($friend))
         if($i == 0)
 		{
 		?>
-        <li class="one_quarter first">
+        <li class="list-group-item">
         <?php
 		}
 		else
 		{
 		?>
-        <li class="one_quarter">
+        <li class="list-group-item">
         <?php
 		}
 		?>
-          <figure class="team-member"><a href='viewprofile.php?friend=<?php echo $rs[profileid2]; ?>'><img src='<?php echo $profileimage; ?>' style="height=570px; width:570px;"></a>
+          <figure class="team-member"><a href='viewprofile.php?friend=<?php echo $rs[profileid2]; ?>'><img src='<?php echo $profileimage; ?>'></a>
           	<figcaption>
               <p class="team-name"><?php echo "<a href='viewprofile.php?friend=$rs[profileid2]'>" . $show[firstname] . "&nbsp;" . $show[lastname] . "</a>"; ?></p>
               <p class="team-title">
@@ -191,7 +191,7 @@ while($rs = mysqli_fetch_array($friend))
 }
 ?>
       </ul>
-    </section>
+    </div>
 
     <!-- ################################################################################################ -->
     <div class="clear"></div>
