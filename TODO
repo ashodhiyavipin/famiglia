@@ -30,7 +30,7 @@ and the next line after the header contains a list of things to be done on the f
 
 ###rightsidebar.php###
 1. redesign how events are displayed.
-2. recode the mysql statement to show only events from a users family.
+2. recode the mysql statement to show only events from a users family.[done]
 #bug when no events should be displayed the simple text of
 " has an event on called" gets displayed use if statement to check
 whether the user has any upcoming events if not then display
