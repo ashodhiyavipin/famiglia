@@ -104,41 +104,35 @@ if ($rsrec[gender] == "Female") {
           <div class="push20">
             <h1></h1>
           <p><?php
-
 		echo "<b>Welcome " . $fnamesession . " " . $lnamesession . "</b><hr>";
-
 		if ($imgpathsession == "") {
-			echo "<img src='images/profilepic.jpg' >";
+			echo "<img src='images/profilepic.jpg' class='img-thumbnail'>";
 		} else {
-			echo "<img src='uploads/$imgpathsession' >";
+			echo "<img src='uploads/$imgpathsession' class='img-thumbnail'>";
 		}
        ?>
-       <hr>
-       <form method="post" action="" enctype="multipart/form-data">
-       <input type="hidden" name="setid" value="<?php echo $_SESSION[setid]; ?>">
-       <input type="file" name="profilepic" >
-       <input type="submit" name="submitimg" value="Change profile pic">
-       </form>
-       </div>
-
-
-   </p>
-        </div>
-      </div>
-
-    </section>
-
+<hr>
+<form method="post" action="" enctype="multipart/form-data">
+<input type="hidden" name="setid" value="<?php echo $_SESSION[setid]; ?>">
+<input type="file" name="profilepic" >
+<input type="submit" name="submitimg" value="Change profile pic">
+</form>
+</div>
+</p>
+</div>
+</div>
+</section>
 <?php
 $fri = mysqli_query($con, "SELECT * FROM friends where (profileid1='$_SESSION[profileid]' or profileid2='$_SESSION[profileid]') and requeststatus='accepted'");
 ?>
     <!-- ################################################################################################ -->
-    <div>
-      <h2><?php echo $rsrec[firstname] . " " . $rsrec[lastname]; ?>'s Friends - (<?php echo mysqli_num_rows($fri); ?> friends)</h2>
+<div>
+<h2><?php echo $rsrec[firstname] . " " . $rsrec[lastname]; ?>'s Friends - (<?php echo mysqli_num_rows($fri); ?> friends)</h2>
 
 <?php
 $friend = mysqli_query($con, "SELECT * from friends where (profileid1='$_SESSION[profileid]' or profileid2='$_SESSION[profileid]') and requeststatus='accepted'");
 ?>
-      <ul class="list-group clear">
+<ul class="list-group clear">
 <?php
 $i=0;
 while($rs = mysqli_fetch_array($friend))
