@@ -1,0 +1,7 @@
+{
+    "host": "ftp.byethost8.com",
+    "port": 21, 
+    "username": "b8_16401901",
+    "password": "123qwer",
+    "rootDirectory": "/htdocs/"
+}

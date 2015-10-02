@@ -20,9 +20,9 @@ include("wallpostcodings.php");
       <h2>Wallpost</h2>
         <div class="tab-wrapper clear">
           <ul class="nav nav-pills clear">
-            <li><a href="#tab-1">Wall</a></li>
-            <li><a href="#tab-2">Photos</a></li>
-            <li><a href="#tab-3">Videos</a></li>
+            <li><a href="#tab-1">Update Status</a></li>
+            <li><a href="#tab-2">Post Photos</a></li>
+            <li><a href="#tab-3">Post Videos</a></li>
           </ul>
           <div>
             <!-- Upload message -->
