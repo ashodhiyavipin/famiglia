@@ -161,10 +161,13 @@ else
 				<div class="col-xs-12">
 					<label class="lead">Username/Email address</label>
 					<input type="text" name=username size="30" class="form-control"/>
+					<br />
 				</div>
 				<div class="col-xs-12">
 					<label class="lead">Password</label>
 					<input type="password" name="password" size="30" class="form-control"/>
+					<br />
+					<br />
 					<br />
 				</div>
 				<div class="col-xs-12">

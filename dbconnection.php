@@ -1,7 +1,7 @@
 <?php
 // Mysql_connect function to connect database
 // localhost is server name(host name) , root is username, technology is password and social networking is datbase name
-$con=mysqli_connect("localhost","root","123-qwer","socialnetworking");
+$con=mysqli_connect("sql201.byethost8.com","b8_16401901","123qwer","b8_16401901_socialnetwork");
 	// Check connection is connected or not
 	if (mysqli_connect_errno())
 	  {

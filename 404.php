@@ -17,7 +17,7 @@ include("header.php");
       </div>
       <div class="divider2"></div>
       <p class="notice">For Some Reason The Page You Requested Could Not Be Found On Our Server</p>
-      <p class="clear"><a class="fl_left" href="javascript:history.go(-1)">&laquo; Go Back</a> <a class="fl_right" href="#">Go Home &raquo;</a></p>
+      <p class="clear"><a class="fl_left" href="javascript:history.go(-1)">&laquo; Go Back</a> <a class="fl_right" href="index.php">Go Home &raquo;</a></p>
       <!-- ####################################################################################################### -->
     </div>
     <!-- ################################################################################################ -->
