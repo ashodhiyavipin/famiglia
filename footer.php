@@ -336,7 +336,7 @@ $rschatuser=mysqli_fetch_array($qchatuser);
 <br>
 <div class="wrapper row4">
   <div id="copyright" class="clear">
-    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="index.php">Famiglia</a> </p>
+    <p class="fl_left">Copyright &copy; <?php $year = date("Y"); echo $year; ?>  - All Rights Reserved - <a href="index.php">Famiglia</a> </p>
     <p class="fl_right">Developer Vipin Ashodhiya
 </p>
   </div>
