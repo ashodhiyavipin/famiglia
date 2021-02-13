@@ -9,7 +9,7 @@ include ("dbconnection.php");
 <?php
 if($_POST['setid']==$_SESSION['setid'])
 {
-	if (isset($_POST["signup"]))
+	if (isset($_POST['signup']))
 	{
 		$sqllogin = mysqli_query($con,"SELECT * FROM profile where emailid='$_POST[emailid]' ");
 		if(mysqli_num_rows($sqllogin) == 0)
@@ -34,7 +34,7 @@ if($_POST['setid']==$_SESSION['setid'])
 }
 }
 
-if(isset($_POST["submitlogin"]))
+if(isset($_POST['submitlogin']))
 {
 $sqllogin = mysqli_query($con,"SELECT * FROM profile where  (username='$_POST[username]' or emailid='$_POST[username]') and password='$_POST[password]'");
 if(mysqli_num_rows($sqllogin) == 1)
@@ -43,7 +43,7 @@ $dt = date("Y-m-d h:i:s");
 $rs = mysqli_fetch_array($sqllogin);
 $update=  mysqli_query($con,"UPDATE  profile SET lastlogin='$dt' WHERE  (username='$_POST[username]' or emailid='$_POST[username]')");
 
-$_SESSION['profileid'] = $rs[profileid];
+$_SESSION['profileid'] = $rs['profileid'];
 header("Location: wallpost.php");
 }
 else
@@ -52,7 +52,7 @@ $msglogin =  "<br><font color='red'>Failed to login..</font>";
 }
 }
 
-if(isset($_POST["btnresetpassword"]))
+if(isset($_POST['btnresetpassword']))
 {
 
 $sqllogin = mysqli_query($con,"UPDATE profile SET password='$_POST[newpass]' where emailid='$_POST[emailidss]' ");
@@ -189,7 +189,7 @@ else
 					<form method="post" action="" onsubmit="return validate2()" name="recoverform">
 						<?php
 						echo $msgupdpass;
-						if(isset($_POST[submitforgetpwd]))
+						if(isset($_POST['submitforgetpwd']))
 						{
 						?>
 						<div class="col-xs-12">

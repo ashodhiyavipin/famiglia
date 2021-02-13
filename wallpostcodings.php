@@ -162,7 +162,7 @@ function secondsToWords($seconds)
 //Coding to insert WALLPOST
 if($_POST['setid']==$_SESSION['setid'])
 {
-	if (isset($_POST["submitwall"]))
+	if (isset($_POST['submitwall']))
 	{
 		$sql="INSERT INTO wallpost(profileid,groupid,message,posttype,datetime,status)
 	  VALUES('$_SESSION[profileid]','$_GET[groupid]','$_POST[message]','Wall','$datetime','Enabled')";
@@ -181,7 +181,7 @@ if($_POST['setid']==$_SESSION['setid'])
 //Coding to insert PHOTOS
 if($_POST['setid']==$_SESSION['setid'])
 {
-	if (isset($_POST["submitphotos"]))
+	if (isset($_POST['submitphotos']))
 	{
 		$sql="INSERT INTO wallpost(profileid,groupid,message,posttype,datetime,status)
 	  VALUES('$_SESSION[profileid]','$_GET[groupid]','$_POST[message]','Photo','$datetime','Enabled')";
@@ -209,7 +209,7 @@ if($_POST['setid']==$_SESSION['setid'])
 //Coding to insert VIDEOS
 if($_POST['setid']==$_SESSION['setid'])
 {
-	if (isset($_POST["submitvideos"]))
+	if (isset($_POST['submitvideos']))
 	{
 		$sql="INSERT INTO wallpost(profileid,groupid,message,posttype,datetime,status)
 	  VALUES('$_SESSION[profileid]','$_GET[groupid]','$_POST[message]','Video','$datetime','Enabled')";
