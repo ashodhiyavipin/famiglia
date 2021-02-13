@@ -54,7 +54,7 @@ include ("dbconnection.php");
 $chaturl = basename($_SERVER['PHP_SELF']) . "?" . $_SERVER['QUERY_STRING'];
 ;
 
-if (isset($_SESSION[profileid])) {
+if (isset($_SESSION['profileid'])) {
 	$sqllogin = mysqli_query($con, "SELECT * FROM profile LEFT JOIN images ON profile.imgid=images.imgid where  profile.profileid='$_SESSION[profileid]'");
 	if (mysqli_num_rows($sqllogin) == 1) {
 		$rs = mysqli_fetch_array($sqllogin);
@@ -86,7 +86,7 @@ if (isset($_SESSION[profileid])) {
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="text-align: right">
 					<?php
-					if(isset($_SESSION[profileid]))
+					if(isset($_SESSION['profileid']))
 					{
 					?>
 					<h2>Welcome!&nbsp;
@@ -98,7 +98,7 @@ if (isset($_SESSION[profileid])) {
 			</div>
 		</div>
 		<?php
-		if(isset($_SESSION[profileid]))
+		if(isset($_SESSION['profileid']))
 		{
 		?>
 		<nav role="navigation" class="navbar navbar-inverse">
@@ -183,7 +183,7 @@ if (isset($_SESSION[profileid])) {
 
 		<?php
 		//Menu for administrator
-		if(isset($_SESSION[adminid]))
+		if(isset($_SESSION['adminid']))
 		{
 		?>
 		<div class="wrapper row2">

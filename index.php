@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (isset($_SESSION[profileid])) {
+if (!isset($_SESSION['profileid'])) {
 	header("Location: wallpost.php");
 }
 include ("dbconnection.php");
 ?>
 
 <?php
-if($_POST[setid]==$_SESSION[setid])
+if($_POST['setid']==$_SESSION['setid'])
 {
 	if (isset($_POST["signup"]))
 	{
@@ -43,7 +43,7 @@ $dt = date("Y-m-d h:i:s");
 $rs = mysqli_fetch_array($sqllogin);
 $update=  mysqli_query($con,"UPDATE  profile SET lastlogin='$dt' WHERE  (username='$_POST[username]' or emailid='$_POST[username]')");
 
-$_SESSION[profileid] = $rs[profileid];
+$_SESSION['profileid'] = $rs[profileid];
 header("Location: wallpost.php");
 }
 else
@@ -68,7 +68,7 @@ $msgupdpass = "<div class='alert alert-success fade in'><a href='#' class='close
 }
 }
 include("header.php");
-$_SESSION[setid] = rand();
+$_SESSION['setid'] = rand();
 ?>
 <!-- content -->
 <div class="wrapper row3">
@@ -86,7 +86,7 @@ else
 		?>
 		<div class="col-xs-12 col-sm-6 col-md-5">
 			<form name="indexform" method="post" action="" onsubmit="return validate()">
-			<input type="hidden" name="setid" value="<?php echo $_SESSION[setid]; ?>">
+			<input type="hidden" name="setid" value="<?php echo $_SESSION['setid']; ?>">
 				<div class="row">
 					<div class="col-xs-12">
 						<h3>Register with us!</h3>
@@ -233,7 +233,7 @@ else
 					</form>
 			</div>
 		</div>
-		
+
 		</div>
 	</div>
 </div>
